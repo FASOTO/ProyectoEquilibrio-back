@@ -2,10 +2,12 @@ package com.equilibrio.backend.backendequilibrio.entidades;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +17,10 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
+    private Domicilio domicilio;
+
     private String nombre;
     private String apellido;
     private String nacionalidad;
@@ -56,6 +62,11 @@ public class Paciente {
     public void setDni(int dni) {
         this.dni = dni;
     }
-
-    
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
+        this.domicilio.setPaciente(this);
+    }
 }
