@@ -16,7 +16,7 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
     private Domicilio domicilio;
@@ -26,10 +26,13 @@ public class Paciente {
     private String nacionalidad;
     private LocalDate fechanacimiento;
     private int dni;
-    public Long getId() {
+    private String telefono;
+
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getNombre() {
@@ -69,4 +72,28 @@ public class Paciente {
         this.domicilio = domicilio;
         this.domicilio.setPaciente(this);
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public Paciente(Integer id , String nombre, String apellido, String nacionalidad, int dni, String telefono) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.nacionalidad = nacionalidad;
+        this.dni = dni;
+        this.telefono = telefono;
+    }
+
+    public Paciente() {
+    }
+
+    
+
+    
 }

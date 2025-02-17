@@ -15,12 +15,26 @@ public class Domicilio {
     private long id;
 
     private String calle;
-    private Integer numeracion;
+    private Integer nrocalle;
     private String localidad;
+    private String barrio;
 
     @OneToOne
     @JoinColumn(name="id_paciente")
     private Paciente paciente;
+
+    public Integer getNrocalle() {
+        return nrocalle;
+    }
+    public void setNrocalle(Integer nrocalle) {
+        this.nrocalle = nrocalle;
+    }
+    public String getBarrio() {
+        return barrio;
+    }
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
+    }
 
     public long getId() {
         return id;
@@ -34,12 +48,6 @@ public class Domicilio {
     public void setCalle(String calle) {
         this.calle = calle;
     }
-    public Integer getNumeracion() {
-        return numeracion;
-    }
-    public void setNumeracion(Integer numeracion) {
-        this.numeracion = numeracion;
-    }
     public String getLocalidad() {
         return localidad;
     }
@@ -52,5 +60,7 @@ public class Domicilio {
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
+
+    
 
 }
