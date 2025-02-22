@@ -1,12 +1,16 @@
 package com.equilibrio.backend.backendequilibrio.entidades;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -21,11 +25,21 @@ public class Paciente {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
     private Domicilio domicilio;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "paciente_id")
+    private List<Procedimiento> procedimientos = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "paciente_id")
+    private List<Imagen> imagenes = new ArrayList<>();
+
     private String nombre;
     private String apellido;
     private String nacionalidad;
-    private LocalDate fechanacimiento;
-    private int dni;
+    private LocalDate fechaNacimiento;
+    private String telefono;
+    private Integer dni;
+
     public Long getId() {
         return id;
     }
@@ -50,23 +64,45 @@ public class Paciente {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    public LocalDate getFechanacimiento() {
-        return fechanacimiento;
+   
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
-    public void setFechanacimiento(LocalDate fechanacimiento) {
-        this.fechanacimiento = fechanacimiento;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
-    public int getDni() {
-        return dni;
-    }
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
+    
     public Domicilio getDomicilio() {
         return domicilio;
     }
     public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
-        this.domicilio.setPaciente(this);
+        domicilio.setPaciente(this);
     }
+    
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    public Integer getDni() {
+        return dni;
+    }
+    public void setDni(Integer dni) {
+        this.dni = dni;
+    }
+    public List<Procedimiento> getProcedimientos() {
+        return procedimientos;
+    }
+    public void setProcedimientos(List<Procedimiento> procedimientos) {
+        this.procedimientos = procedimientos;
+    }
+    public List<Imagen> getImagenes() {
+        return imagenes;
+    }
+    public void setImagenes(List<Imagen> imagenes) {
+        this.imagenes = imagenes;
+    }
+       
 }

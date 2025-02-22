@@ -12,20 +12,22 @@ public class Domicilio {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     private String calle;
     private Integer numeracion;
     private String localidad;
+    private String barrio;
 
     @OneToOne
     @JoinColumn(name="id_paciente")
     private Paciente paciente;
 
-    public long getId() {
+    
+    public Integer getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getCalle() {
@@ -51,6 +53,12 @@ public class Domicilio {
     }
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+    public String getBarrio() {
+        return barrio;
+    }
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
     }
 
 }
