@@ -10,8 +10,4 @@ import com.equilibrio.backend.backendequilibrio.entidades.Paciente;
 @RepositoryRestResource(path = "pacientes")//, excerptProjection = PacienteProyeccion.class)
 public interface PacienteRespositorio extends CrudRepository<Paciente, Long> {
 
-    // @Query("select p from Paciente p")
-    // @RestResource(path = "todos")
-    // List<Paciente> gPacientes();
-
 }
