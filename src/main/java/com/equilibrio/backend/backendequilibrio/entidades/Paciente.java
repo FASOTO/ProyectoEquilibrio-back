@@ -25,6 +25,9 @@ public class Paciente {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
     private Domicilio domicilio;
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
+    private DeclaracionJurada declaracionJurada;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "paciente_id")
     private List<Procedimiento> procedimientos = new ArrayList<>();
@@ -35,11 +38,32 @@ public class Paciente {
 
     private String nombre;
     private String apellido;
+    private Integer dni;
     private String nacionalidad;
     private LocalDate fechaNacimiento;
     private String telefono;
-    private Integer dni;
+    private String obraSocial;
+    private Integer nroAfiliado;
+    private String estadoCivil;
 
+    public String getObraSocial() {
+        return obraSocial;
+    }
+    public void setObraSocial(String obraSocial) {
+        this.obraSocial = obraSocial;
+    }
+    public Integer getNroAfiliado() {
+        return nroAfiliado;
+    }
+    public void setNroAfiliado(Integer nroAfiliado) {
+        this.nroAfiliado = nroAfiliado;
+    }
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
     public Long getId() {
         return id;
     }
@@ -79,7 +103,13 @@ public class Paciente {
         this.domicilio = domicilio;
         domicilio.setPaciente(this);
     }
-    
+    public DeclaracionJurada getDeclaracionJurada() {
+        return declaracionJurada;
+    }
+    public void setDeclaracionJurada(DeclaracionJurada declaracionJurada) {
+        this.declaracionJurada = declaracionJurada;
+        declaracionJurada.setPaciente(this);
+    }
     public String getTelefono() {
         return telefono;
     }
@@ -104,5 +134,6 @@ public class Paciente {
     public void setImagenes(List<Imagen> imagenes) {
         this.imagenes = imagenes;
     }
+    
        
 }

@@ -14,15 +14,15 @@ public class Domicilio {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    private String calle;
-    private Integer numeracion;
-    private String localidad;
-    private String barrio;
-
     @OneToOne
     @JoinColumn(name="id_paciente")
     private Paciente paciente;
+    
+    private String calle;
+    private Integer numeracion;
+    private String localidad;
 
+    
     
     public Integer getId() {
         return id;
@@ -53,12 +53,6 @@ public class Domicilio {
     }
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
-    }
-    public String getBarrio() {
-        return barrio;
-    }
-    public void setBarrio(String barrio) {
-        this.barrio = barrio;
     }
 
 }
