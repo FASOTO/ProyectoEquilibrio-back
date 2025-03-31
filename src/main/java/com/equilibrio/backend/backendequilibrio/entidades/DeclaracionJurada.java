@@ -31,7 +31,9 @@ public class DeclaracionJurada {
     private String enfermedadCual;
 
     private boolean tratamientoMedico;
-    private String tratamientoCual;
+    private String tratamientoMedicoCual;
+
+    private String medicamentosConsumeHabitualmente;
 
     private String medicamentoUltimos5;
 
@@ -39,6 +41,8 @@ public class DeclaracionJurada {
     private boolean malestarDeporte;
 
     private boolean alergicoDroga;
+    private boolean alergicoAnestecia;
+    private boolean alergicoPenicilina;
     private String drogaCual;
 
     private boolean cicatriza;
@@ -80,12 +84,13 @@ public class DeclaracionJurada {
     private String epilepticoMedicacion;
 
     private boolean sifilisGonorrea;
-    private String otraEnfermedadInfectocontagiosa;
+    private boolean otraEnfermedadInfectocontagiosa;
 
     private boolean transfusiones;
 
     private boolean operado;
     private String operadoDeQue;
+    private String operadoCuando;
 
     private boolean problemaRespiratorio;
     private String problemaRespiratorioCual;
@@ -171,11 +176,11 @@ public class DeclaracionJurada {
     public void setTratamientoMedico(boolean tratamientoMedico) {
         this.tratamientoMedico = tratamientoMedico;
     }
-    public String getTratamientoCual() {
-        return tratamientoCual;
+    public String getTratamientoMedicoCual() {
+        return tratamientoMedicoCual;
     }
-    public void setTratamientoCual(String tratamientoCual) {
-        this.tratamientoCual = tratamientoCual;
+    public void setTratamientoMedicoCual(String tratamientoCual) {
+        this.tratamientoMedicoCual = tratamientoCual;
     }
     public String getMedicamentoUltimos5() {
         return medicamentoUltimos5;
@@ -357,10 +362,10 @@ public class DeclaracionJurada {
     public void setSifilisGonorrea(boolean sifilisGonorrea) {
         this.sifilisGonorrea = sifilisGonorrea;
     }
-    public String getOtraEnfermedadInfectocontagiosa() {
+    public boolean getOtraEnfermedadInfectocontagiosa() {
         return otraEnfermedadInfectocontagiosa;
     }
-    public void setOtraEnfermedadInfectocontagiosa(String otraEnfermedadInfectocontagiosa) {
+    public void setOtraEnfermedadInfectocontagiosa(boolean otraEnfermedadInfectocontagiosa) {
         this.otraEnfermedadInfectocontagiosa = otraEnfermedadInfectocontagiosa;
     }
     public boolean isTransfusiones() {
@@ -440,6 +445,30 @@ public class DeclaracionJurada {
     }
     public void setClinicaHospital(String clinicaHospital) {
         this.clinicaHospital = clinicaHospital;
+    }
+    public String getMedicamentosConsumeHabitualmente() {
+        return medicamentosConsumeHabitualmente;
+    }
+    public void setMedicamentosConsumeHabitualmente(String medicamentosConsumeHabitualmente) {
+        this.medicamentosConsumeHabitualmente = medicamentosConsumeHabitualmente;
+    }
+    public boolean isAlergicoAnestecia() {
+        return alergicoAnestecia;
+    }
+    public void setAlergicoAnestecia(boolean alergicoAnestecia) {
+        this.alergicoAnestecia = alergicoAnestecia;
+    }
+    public boolean isAlergicoPenicilina() {
+        return alergicoPenicilina;
+    }
+    public void setAlergicoPenicilina(boolean alergicoPenicilina) {
+        this.alergicoPenicilina = alergicoPenicilina;
+    }
+    public String getOperadoCuando() {
+        return operadoCuando;
+    }
+    public void setOperadoCuando(String operadoCuando) {
+        this.operadoCuando = operadoCuando;
     }
 
     

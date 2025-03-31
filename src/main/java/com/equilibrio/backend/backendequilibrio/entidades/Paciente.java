@@ -27,6 +27,9 @@ public class Paciente {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
     private DeclaracionJurada declaracionJurada;
+    
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "paciente")
+    private SaludPaciente saludPaciente;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "paciente_id")
@@ -110,6 +113,13 @@ public class Paciente {
         this.declaracionJurada = declaracionJurada;
         declaracionJurada.setPaciente(this);
     }
+    public SaludPaciente getSaludPaciente() {
+        return saludPaciente;
+    }
+    public void setSaludPaciente(SaludPaciente saludPaciente) {
+        this.saludPaciente = saludPaciente;
+        saludPaciente.setPaciente(this);
+    }
     public String getTelefono() {
         return telefono;
     }
@@ -134,6 +144,7 @@ public class Paciente {
     public void setImagenes(List<Imagen> imagenes) {
         this.imagenes = imagenes;
     }
+    
     
        
 }
