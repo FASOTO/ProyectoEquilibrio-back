@@ -58,7 +58,7 @@ public class SaludPaciente {
     private boolean lesionAbultamientoTejidos;
     private boolean lesionUlceraciones;
     private boolean lesionAmpollar;
-    private boolean lesionOtros;
+    private String lesionOtros;
 
     private boolean sangranEncias;
     private String sangranEnciasCuando;
@@ -359,11 +359,11 @@ public class SaludPaciente {
         this.lesionAmpollar = lesionAmpollar;
     }
 
-    public boolean isLesionOtros() {
+    public String isLesionOtros() {
         return lesionOtros;
     }
 
-    public void setLesionOtros(boolean lesionOtros) {
+    public void setLesionOtros(String lesionOtros) {
         this.lesionOtros = lesionOtros;
     }
 
