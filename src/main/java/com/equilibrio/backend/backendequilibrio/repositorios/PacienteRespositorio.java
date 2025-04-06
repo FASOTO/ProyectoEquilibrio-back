@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.equilibrio.backend.backendequilibrio.entidades.Paciente;
 
 @CrossOrigin(origins = "http://localhost:4200/")
-@RepositoryRestResource(path = "pacientes")//, excerptProjection = PacienteProyeccion.class)
+@RepositoryRestResource(path = "pacientes")
 public interface PacienteRespositorio extends CrudRepository<Paciente, Long> {
 
 }
