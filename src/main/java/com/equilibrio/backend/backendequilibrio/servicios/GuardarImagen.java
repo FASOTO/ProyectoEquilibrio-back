@@ -41,15 +41,15 @@ public class GuardarImagen implements IGuardarImagen {
                     carpetaNueva.mkdirs();
                 }
                 byte[] bytes = file.getBytes();
-                String nombreOriginal = file.getOriginalFilename();
-                String direccionNueva = carpetaNueva + "/" + nombreOriginal;
+                // String nombreOriginal = file.getOriginalFilename();
+                String direccionNueva = carpetaNueva + "/" + file.getOriginalFilename();
 
                 
                 Path path = Paths.get(direccionNueva);
                 Files.write(path, bytes);
                 Imagen newImage = new Imagen();
                 newImage.setUrl(path.toString());
-                newImage.setPaciente(p1);
+                // newImage.setPaciente(p1);
                 p1.getImagenes().add(newImage);
             }
 
