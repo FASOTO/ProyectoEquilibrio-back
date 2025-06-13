@@ -11,11 +11,11 @@ import jakarta.persistence.OneToOne;
 public class SaludPaciente {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @OneToOne
-    @JoinColumn(name="id_paciente")
+    @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 
     private String porqueAsistioConsulta;
@@ -28,8 +28,13 @@ public class SaludPaciente {
 
     private boolean haTenidoDolor;
     private String queTipo;
+
+    private boolean localizado;
     private String localizadoDonde;
+
+    private boolean irradiado;
     private String irradiadoHaciaDonde;
+
     private String puedeCalmarlo;
 
     private boolean sufrioGolpeDientes;
@@ -48,7 +53,7 @@ public class SaludPaciente {
     private String observadoAnormalLabios;
     private String observadoAnormalLengua;
     private String observadoAnormalPaladar;
-    private String observadoAnormalPissoBoca;
+    private String observadoAnormalPisoBoca;
     private String observadoAnormalCarrillos;
     private String observadoAnormalRebordes;
     private String observadoAnormalTrigonos;
@@ -73,7 +78,7 @@ public class SaludPaciente {
     private String caraHinchadaHielo;
     private String caraHinchadaCalor;
     private String caraHinchadaOtros;
-    
+
     private String azucarDiarios;
     private String indicePlaca;
 
@@ -287,12 +292,12 @@ public class SaludPaciente {
         this.observadoAnormalPaladar = observadoAnormalPaladar;
     }
 
-    public String getObservadoAnormalPissoBoca() {
-        return observadoAnormalPissoBoca;
+    public String getObservadoAnormalPisoBoca() {
+        return observadoAnormalPisoBoca;
     }
 
-    public void setObservadoAnormalPissoBoca(String observadoAnormalPissoBoca) {
-        this.observadoAnormalPissoBoca = observadoAnormalPissoBoca;
+    public void setObservadoAnormalPisoBoca(String observadoAnormalPissoBoca) {
+        this.observadoAnormalPisoBoca = observadoAnormalPissoBoca;
     }
 
     public String getObservadoAnormalCarrillos() {
@@ -471,6 +476,24 @@ public class SaludPaciente {
         this.higieneBucal = higieneBucal;
     }
 
+    public boolean isLocalizado() {
+        return localizado;
+    }
 
-    
+    public void setLocalizado(boolean localizado) {
+        this.localizado = localizado;
+    }
+
+    public boolean isIrradiado() {
+        return irradiado;
+    }
+
+    public void setIrradiado(boolean irradiado) {
+        this.irradiado = irradiado;
+    }
+
+    public String getLesionOtros() {
+        return lesionOtros;
+    }
+
 }

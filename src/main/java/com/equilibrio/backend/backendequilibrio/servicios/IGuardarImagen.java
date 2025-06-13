@@ -6,6 +6,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface IGuardarImagen {
 
     void init();
-    String guardar(Long id, MultipartFile[] archivo) throws Exception;
+    String guardar(Long id, MultipartFile[] archivo, String host) throws Exception;
     Resource loadImagen(String nombreArchivo);
 }

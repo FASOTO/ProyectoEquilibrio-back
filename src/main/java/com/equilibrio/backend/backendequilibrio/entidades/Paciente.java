@@ -48,6 +48,7 @@ public class Paciente {
     private String obraSocial;
     private Integer nroAfiliado;
     private String estadoCivil;
+    private String profesion;
 
     public String getObraSocial() {
         return obraSocial;
@@ -91,7 +92,6 @@ public class Paciente {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-   
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
@@ -144,7 +144,11 @@ public class Paciente {
     public void setImagenes(List<Imagen> imagenes) {
         this.imagenes = imagenes;
     }
+    public String getProfesion() {
+        return profesion;
+    }
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
     
-    
-       
 }
